@@ -1,7 +1,11 @@
+Got it! Here’s a **cleaned-up, ready-to-copy `README.md`** version of your Sakura Room walkthrough. I fixed formatting issues, removed ASCII/artifacts, ensured Markdown renders properly, and kept all your images intact. Emojis are preserved for clarity.
+
 ```markdown
 # 🌸 Sakura Room — OSINT Investigation Walkthrough
 
-This is my Personal documentation of my OSINT investigation in the Sakura Room on TryHackMe, created by Huge thanks for OSINT Dojo.  
+This is my personal documentation of my OSINT investigation in the **Sakura Room** on TryHackMe.  
+Huge thanks to **OSINT Dojo** for creating this room!  
+
 The room simulates tracking a cybercriminal using passive OSINT techniques.
 
 ---
@@ -13,8 +17,11 @@ The room simulates tracking a cybercriminal using passive OSINT techniques.
 **Instructions:**  
 Type the following to begin the room:
 
+```
+
 Let's Go!
 
+````
 
 **Notes:**  
 - This task is the entry point for the investigation.  
@@ -29,8 +36,7 @@ Let's Go!
 ### 🔍 Background
 A static image was left behind by the attacker. Inspecting the page may reveal metadata containing the attacker’s identity.
 
-<img width="1920" height="909" alt="Screenshot_2025-11-29_05_53_13" src="https://github.com/user-attachments/assets/d24f1a7c-0493-4016-919e-20ace0eb5486" />
-
+<img width="1920" height="909" alt="Task 2 Screenshot" src="https://github.com/user-attachments/assets/d24f1a7c-0493-4016-919e-20ace0eb5486" />
 
 ### 🕵️‍♂️ Methodology (Passive OSINT Only)
 1. Open the page with the attacker’s image.  
@@ -59,20 +65,19 @@ The attacker reused their username across multiple platforms. Username correlati
 1. Start with the username: `SakuraSnowAngelAiko`.  
 2. Search social media platforms:
 
-<img width="1920" height="909" alt="Screenshot_2025-11-29_05_57_03 (1)" src="https://github.com/user-attachments/assets/6272f023-d2f4-4b5f-a633-c9bae98adea8" />
- 
-   - X/Twitter → `https://x.com/SakuraLoverAiko`
+<img width="1920" height="909" alt="Task 3 Screenshot 1" src="https://github.com/user-attachments/assets/6272f023-d2f4-4b5f-a633-c9bae98adea8" />
 
+   - X/Twitter → `https://x.com/SakuraLoverAiko`  
    - Found reference to another account: `@AikoAbe3`  
+
 3. Confirm account consistency and collect information:  
    - Real name found: **Aiko Abe**  
-4. Find email in public artifacts (GitHub PGP key):  
-<img width="1920" height="1080" alt="Screenshot (29)" src="https://github.com/user-attachments/assets/bef7a91e-618b-4d32-bab3-e5016baa90fb" />
 
+4. Find email in public artifacts (GitHub PGP key):
+
+<img width="1920" height="1080" alt="Task 3 Screenshot 2" src="https://github.com/user-attachments/assets/bef7a91e-618b-4d32-bab3-e5016baa90fb" />
 
 [SakuraSnowAngel83@protonmail.com](mailto:SakuraSnowAngel83@protonmail.com)
-
-
 
 ### ✅ Answers
 - **Full real name:** `Aiko Abe`  
@@ -88,16 +93,20 @@ The attacker reused their username across multiple platforms. Username correlati
 The attacker edited or deleted information in their GitHub repos to hide data. Commit history can reveal valuable clues.
 
 ### 🕵️‍♂️ Methodology
-<img width="1920" height="909" alt="Screenshot_2025-11-29_07_05_33 (1)" src="https://github.com/user-attachments/assets/a2dfb091-1c57-4467-aa7a-85298703ce0a" />
+<img width="1920" height="909" alt="Task 4 Screenshot 1" src="https://github.com/user-attachments/assets/a2dfb091-1c57-4467-aa7a-85298703ce0a" />
 
 1. Identify cryptocurrency repo → **Ethereum**.  
 2. Check GitHub commit history to recover deleted wallet:
-<img width="1920" height="909" alt="Screenshot_2025-11-29_08_17_50 (1)" src="https://github.com/user-attachments/assets/65771707-de8a-4f09-9457-2fc6abf17c4d" />
+
+<img width="1920" height="909" alt="Task 4 Screenshot 2" src="https://github.com/user-attachments/assets/65771707-de8a-4f09-9457-2fc6abf17c4d" />
+
+````
 
 0xa102397dbeeBeFD8cD2F73A89122fCdB53abB6ef
 
+```
 
-<img width="1920" height="909" alt="Screenshot_2025-11-29_08_23_58 (1)" src="https://github.com/user-attachments/assets/29c5bcc7-1cd1-4bf7-abaa-99083c8cbbb2" />
+<img width="1920" height="909" alt="Task 4 Screenshot 3" src="https://github.com/user-attachments/assets/29c5bcc7-1cd1-4bf7-abaa-99083c8cbbb2" />
 
 3. Investigate the wallet using Ethereum explorer.  
 4. Identify mining pool: **Ethermine** (payment received Jan 23, 2021 UTC).  
@@ -120,13 +129,16 @@ The attacker messaged OSINT Dojo using a different Twitter account, potentially 
 
 ### 🕵️‍♂️ Methodology
 1. Examine screenshot and identify the Twitter handle:
-<img width="1920" height="909" alt="Screenshot_2025-11-29_05_57_12 (1)" src="https://github.com/user-attachments/assets/a5611ac7-7319-418c-9325-93228d108ccb" />
+
+<img width="1920" height="909" alt="Task 5 Screenshot 1" src="https://github.com/user-attachments/assets/a5611ac7-7319-418c-9325-93228d108ccb" />
+
 - **`@SakuraLoverAiko`**
 
-<img width="1920" height="1080" alt="Screenshot (27)" src="https://github.com/user-attachments/assets/001c4a10-abe1-45e8-8627-d9bc02d6dbfb" />
+<img width="1920" height="1080" alt="Task 5 Screenshot 2" src="https://github.com/user-attachments/assets/001c4a10-abe1-45e8-8627-d9bc02d6dbfb" />
 
 2. Analyze images posted for geolocation clues (map of home).  
 3. Use **Wigle Advanced Search** to confirm BSSID:  
+
 - **`84:af:ec:34:fc:f8`**
 
 ### ✅ Answers
@@ -148,13 +160,12 @@ Photos on Twitter reveal flight paths, airports, and local landmarks. OSINT synt
 3. Identify lake from final flight photo → **Lake Inawashiro**  
 4. Reverse image search final hotel → **Hirosaki**
 
+<img width="1920" height="1080" alt="Task 6 Screenshot" src="https://github.com/user-attachments/assets/e2e925a0-b29a-4b26-94e7-7e49ec502fe2" />
+
 ### ✅ Answers
 - **Closest Airport (before flight):** DCA  
-- **Last Layover Airport:** HND
-<img width="1920" height="1080" alt="Screenshot (27)" src="https://github.com/user-attachments/assets/e2e925a0-b29a-4b26-94e7-7e49ec502fe2" />
-
+- **Last Layover Airport:** HND  
 - **Lake visible on flight:** Lake Inawashiro  
 - **Likely Home City:** Hirosaki, Japan
 
-:
-
+---
