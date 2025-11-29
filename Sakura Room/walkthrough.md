@@ -1,6 +1,4 @@
 
----
-
 # 🌸 **Sakura Room — OSINT Case Report**
 
 ### **Passive OSINT Investigation • TryHackMe Walkthrough**
