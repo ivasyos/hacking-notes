@@ -1,0 +1,89 @@
+```markdown
+# 🌸 Sakura Room — OSINT Investigation Write-up
+
+This is a documentation of my OSINT investigation in the **Sakura Room** on TryHackMe, created by OSINT Dojo.  
+The room simulates tracking a cybercriminal using passive OSINT techniques.
+
+---
+
+## 🐾 Task 1 — Introduction
+
+**Goal:** Start the investigation.
+
+**Instructions:**  
+Type the following to begin the room:
+
+```
+
+Let's Go!
+
+````
+
+**Notes:**  
+- This task is the entry point for the investigation.  
+- All following tasks build on this.
+
+---
+
+## 🐾 Task 2 — Tip Off
+
+**Goal:** Identify the attacker’s username.
+
+### 🔍 Background
+A static image was left by the attacker. Inspecting the page may reveal metadata containing the attacker’s identity.
+
+### 🕵️‍♂️ Methodology (Passive OSINT Only)
+
+1. Open the page with the attacker’s image.  
+2. View the page source (`Ctrl+U` or right-click → *View Page Source*).  
+3. Search for the image filename or path.  
+   - Found in the HTML:  
+     ```
+     filename="/home/SakuraSnowAngelAiko/Desktop/pwnedletter.png"
+     ```
+4. Extract the username from the path:  
+   - Text between `/home/` and `/Desktop` → **SakuraSnowAngelAiko**
+
+### ✅ Answer
+**Username:** `SakuraSnowAngelAiko`
+
+**Notes:**  
+- The binary in `aria-label` is decorative and not relevant.  
+- Metadata leaks like file paths can reveal usernames.
+
+---
+
+## 🐾 Task 3 — Social Media Footprint
+
+**Goal:** Find the attacker’s full real name and email using their username.
+
+### 🔍 Background
+The attacker reused their username across multiple platforms. Username correlation can expose real personal information.
+
+### 🕵️‍♂️ Methodology (Passive OSINT Only)
+
+1. Start with the known username: `SakuraSnowAngelAiko`.  
+2. Search social media platforms:  
+   - X (Twitter) → `https://x.com/SakuraLoverAiko`  
+   - Found reference to another account: `@AikoAbe3`  
+3. Confirm account consistency and collect information:  
+   - Real name found: **Aiko Abe**  
+4. Find email in public artifacts (GitHub PGP key):  
+````
+
+[SakuraSnowAngel83@protonmail.com](mailto:SakuraSnowAngel83@protonmail.com)
+
+```
+
+### ✅ Answers
+
+- **Full real name:** `Aiko Abe`  
+- **Full email address:** `SakuraSnowAngel83@protonmail.com`
+
+### 💡 Notes
+- Username correlation is a core OSINT technique.  
+- Emails can appear in public keys, Git commits, or profile metadata.  
+- Always verify accounts to avoid false positives.
+
+---
+
