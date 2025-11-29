@@ -1,169 +1,205 @@
-Here is your **clean, fixed, final README** — all images display normally, no ASCII, no broken formatting.
-I kept everything exactly the same, only cleaned structure, spacing, and formatting so it looks perfect in GitHub.
+Here is your **final, professional OSINT case-report style README** with:
+
+✅ Clean title banner
+✅ Professional OSINT case-report layout
+✅ Better section spacing
+✅ No YAML
+✅ No ASCII
+✅ Images display cleanly
+✅ Looks like a real digital-forensics report
+
+Copy–paste directly into GitHub.
 
 ---
 
-```markdown
-# 🌸 Sakura Room — OSINT Investigation Walkthrough
+# 🌸 **Sakura Room — OSINT Case Report**
 
-This is my personal documentation of the OSINT investigation in the **Sakura Room** on TryHackMe (created with huge thanks to OSINT Dojo).  
-The room simulates tracking a cybercriminal using **passive OSINT techniques**.
+### **Passive OSINT Investigation • TryHackMe Walkthrough**
 
 ---
 
-## 🐾 Task 1 — Introduction
+## 🧭 Overview
+
+This report documents my complete OSINT investigation of the **Sakura Room** on TryHackMe, created with support from **OSINT Dojo**.
+The scenario simulates tracking a cybercriminal using **passive OSINT techniques only**.
+
+The report includes:
+
+* Username enumeration
+* Social media identity correlation
+* Cryptocurrency wallet tracing
+* Metadata analysis
+* WiFi & geolocation intelligence
+* Travel pattern reconstruction
+
+---
+
+# 🏷️ **Case Summary**
+
+| Field                    | Details                                                                     |
+| ------------------------ | --------------------------------------------------------------------------- |
+| **Case Name**            | Sakura OSINT Investigation                                                  |
+| **Target Alias**         | SakuraSnowAngelAiko                                                         |
+| **Real Name**            | Aiko Abe                                                                    |
+| **Primary Handle**       | @SakuraLoverAiko                                                            |
+| **Email**                | [SakuraSnowAngel83@protonmail.com](mailto:SakuraSnowAngel83@protonmail.com) |
+| **Main Cryptocurrency**  | Ethereum                                                                    |
+| **Wallet Address**       | `0xa102397dbeeBeFD8cD2F73A89122fCdB53abB6ef`                                |
+| **Home BSSID**           | `84:af:ec:34:fc:f8`                                                         |
+| **Likely Home Location** | Hirosaki, Japan                                                             |
+
+---
+
+# 🐾 **Task 1 — Introduction**
 
 **Goal:** Start the investigation.
 
-**Instructions:**  
-Type the following to begin the room:
-
-**Let's Go!**
-
-**Notes:**  
-- This task is the entry point for the investigation.  
-- All following tasks build on this.
+No technical analysis; this task simply unlocks the room.
 
 ---
 
-## 🐾 Task 2 — Tip Off
+# 🐾 **Task 2 — Tip Off**
 
 **Goal:** Identify the attacker’s username.
 
-### 🔍 Background
-A static image was left behind by the attacker. Inspecting the page may reveal metadata containing the attacker’s identity.
+### Evidence
 
 <img width="1920" height="909" alt="Screenshot_2025-11-29_05_53_13" src="https://github.com/user-attachments/assets/d24f1a7c-0493-4016-919e-20ace0eb5486" />
 
-### 🕵️‍♂️ Methodology (Passive OSINT Only)
-1. Open the page with the attacker’s image.  
-2. View page source (`Ctrl+U`).  
-3. Search for the image filename or path.  
-   Found in the HTML:
-```
+### Analysis
 
-filename="/home/SakuraSnowAngelAiko/Desktop/pwnedletter.png"
+Source code of the page contains the image path:
 
 ```
-4. Extract username:
-- Between `/home/` and `/Desktop` → **SakuraSnowAngelAiko**
+/home/SakuraSnowAngelAiko/Desktop/pwnedletter.png
+```
 
-### ✅ Answer
+Extracted username: **SakuraSnowAngelAiko**
+
+### 🎯 Finding
+
 **Username:** `SakuraSnowAngelAiko`
 
 ---
 
-## 🐾 Task 3 — Social Media Footprint
+# 🐾 **Task 3 — Social Media Footprint**
 
-**Goal:** Find the attacker’s real name and email.
+**Goal:** Identify real name and email.
 
-### 🔍 Background
-The attacker reused their username across platforms. Username correlation exposes personal data.
-
-### 🕵️‍♂️ Methodology
-1. Start with `SakuraSnowAngelAiko`.  
-2. Check social media:
+### Evidence
 
 <img width="1920" height="909" alt="Screenshot_2025-11-29_05_57_03 (1)" src="https://github.com/user-attachments/assets/6272f023-d2f4-4b5f-a633-c9bae98adea8" />
 
-- X/Twitter → `@SakuraLoverAiko`  
-- Found reference to → `@AikoAbe3`
+### Analysis
 
-3. Real name found: **Aiko Abe**  
-4. Email discovered through PGP key on GitHub:
+* Username reused on multiple platforms
+* Connected handle found: **@AikoAbe3**
+* Real identity correlated: **Aiko Abe**
+
+PGP key on GitHub revealed email:
 
 <img width="1920" height="1080" alt="Screenshot (29)" src="https://github.com/user-attachments/assets/bef7a91e-618b-4d32-bab3-e5016baa90fb" />
 
-📧 **Email:** `SakuraSnowAngel83@protonmail.com`
+### 🎯 Findings
 
-### ✅ Answers
-- **Full Name:** `Aiko Abe`  
-- **Email:** `SakuraSnowAngel83@protonmail.com`
+* **Real Name:** `Aiko Abe`
+* **Email:** `SakuraSnowAngel83@protonmail.com`
 
 ---
 
-## 🐾 Task 4 — Cryptocurrency Trail
+# 🐾 **Task 4 — Cryptocurrency Trail**
 
-**Goal:** Recover deleted GitHub info and trace crypto activity.
+**Goal:** Trace the attacker’s cryptocurrency activity.
 
-### 🔍 Background
-The attacker deleted sensitive data. Commit history can reveal hidden info.
-
-### 🕵️‍♂️ Methodology
+### Evidence
 
 <img width="1920" height="909" alt="Screenshot_2025-11-29_07_05_33 (1)" src="https://github.com/user-attachments/assets/a2dfb091-1c57-4467-aa7a-85298703ce0a" />
 
-1. Identify crypto repo → **Ethereum**.  
-2. Recover deleted wallet from commit history:
+### Analysis
+
+Commit history revealed a deleted Ethereum wallet:
 
 <img width="1920" height="909" alt="Screenshot_2025-11-29_08_17_50 (1)" src="https://github.com/user-attachments/assets/65771707-de8a-4f09-9457-2fc6abf17c4d" />
 
-Wallet Address:  
+Wallet:
 `0xa102397dbeeBeFD8cD2F73A89122fCdB53abB6ef`
+
+Further blockchain investigation:
 
 <img width="1920" height="909" alt="Screenshot_2025-11-29_08_23_58 (1)" src="https://github.com/user-attachments/assets/29c5bcc7-1cd1-4bf7-abaa-99083c8cbbb2" />
 
-3. Investigate on explorer.  
-4. Mining pool → **Ethermine**  
-5. Exchanged coin → **Tether (USDT)**
+* Mining pool payment from **Ethermine**
+* Conversion to **USDT (Tether)** observed
 
-### ✅ Answers
-- **Cryptocurrency:** Ethereum  
-- **Wallet:** `0xa102397dbeeBeFD8cD2F73A89122fCdB53abB6ef`  
-- **Mining Pool:** Ethermine  
-- **Other Coin:** Tether (USDT)
+### 🎯 Findings
+
+* **Currency:** Ethereum
+* **Wallet Address:** `0xa102397dbeeBeFD8cD2F73A89122fCdB53abB6ef`
+* **Mining Pool:** Ethermine
+* **Converted Currency:** USDT (Tether)
 
 ---
 
-## 🐾 Task 5 — Twitter & WiFi
+# 🐾 **Task 5 — Twitter & WiFi Identification**
 
-**Goal:** Identify attacker’s new Twitter handle and home WiFi BSSID.
+**Goal:** Identify attacker’s Twitter handle and home WiFi.
 
-### 🕵️‍♂️ Methodology
-1. From screenshot:
+### Evidence
 
 <img width="1920" height="909" alt="Screenshot_2025-11-29_05_57_12 (1)" src="https://github.com/user-attachments/assets/a5611ac7-7319-418c-9325-93228d108ccb" />
 
-→ Account: **@SakuraLoverAiko**
-
 <img width="1920" height="1080" alt="Screenshot (27)" src="https://github.com/user-attachments/assets/001c4a10-abe1-45e8-8627-d9bc02d6dbfb" />
 
-2. Geo clues lead to WiFi BSSID via Wigle:
+### Analysis
 
-**BSSID:** `84:af:ec:34:fc:f8`
+* New handle identified → **@SakuraLoverAiko**
+* Image metadata + Wigle lookup revealed WiFi BSSID:
 
-### ✅ Answers
-- **Twitter:** `@SakuraLoverAiko`  
-- **WiFi BSSID:** `84:af:ec:34:fc:f8`
+`84:af:ec:34:fc:f8`
+
+### 🎯 Findings
+
+* **Twitter Handle:** `@SakuraLoverAiko`
+* **Home BSSID:** `84:af:ec:34:fc:f8`
 
 ---
 
-## 🐾 Task 6 — Track Home Route
+# 🐾 **Task 6 — Travel & Home Location**
 
-**Goal:** Identify attacker’s final destination using geo-OSINT.
+**Goal:** Determine the attacker’s route and home city.
 
-### 🕵️‍♂️ Methodology
-1. Pre-flight airport → **DCA**  
-2. Layover → **HND (Tokyo Haneda)**  
-3. Lake seen during flight → **Lake Inawashiro**  
-4. Reverse image search maps to → **Hirosaki**
+### Analysis Steps
+
+1. **Airport before flight:** DCA (Ronald Reagan Washington National Airport)
+2. **Layover:** HND (Tokyo Haneda Airport)
+3. **Lake in photo:** Lake Inawashiro
+4. **Hotel / final area:** Hirosaki
+
+### Evidence
 
 <img width="1920" height="1080" alt="Screenshot (27)" src="https://github.com/user-attachments/assets/e2e925a0-b29a-4b26-94e7-7e49ec502fe2" />
 
-### ✅ Answers
-- **Closest Airport:** DCA  
-- **Layover:** HND  
-- **Lake:** Lake Inawashiro  
-- **Likely Home City:** Hirosaki, Japan
-```
+### 🎯 Findings
+
+* **Closest Airport:** DCA
+* **Layover Airport:** HND
+* **Lake Seen:** Lake Inawashiro
+* **Likely Home City:** Hirosaki, Japan
 
 ---
 
-If you want, I can also:
+# 🧩 Final Conclusion
 
-✅ Add a clean title banner
-✅ Add a table of contents
-✅ Add badges (TryHackMe, OSINT, GitHub)
-✅ Make it look like a professional OSINT case report
+The OSINT investigation successfully unmasked the attacker through:
 
-Just tell me.
+✔ Username analysis
+✔ Social media cross-correlation
+✔ Metadata extraction
+✔ Blockchain tracing
+✔ WiFi geolocation
+✔ Travel-route reconstruction
+
+The attacker **Aiko Abe**, operating under the alias **SakuraSnowAngelAiko**, was linked to cryptocurrency mining, multiple social profiles, and a likely residence in **Hirosaki, Japan**.
+
+---
+
