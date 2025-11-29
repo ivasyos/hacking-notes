@@ -1,14 +1,3 @@
-Here is your **final, professional OSINT case-report style README** with:
-
-✅ Clean title banner
-✅ Professional OSINT case-report layout
-✅ Better section spacing
-✅ No YAML
-✅ No ASCII
-✅ Images display cleanly
-✅ Looks like a real digital-forensics report
-
-Copy–paste directly into GitHub.
 
 ---
 
