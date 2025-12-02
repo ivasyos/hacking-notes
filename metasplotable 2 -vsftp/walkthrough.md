@@ -39,7 +39,7 @@ This assessment simulates a real-world situation where an outdated and compromis
 **Goal:** Identify attacker subnet and scan the network.
 
 ### Evidence
-
+<img width="1920" height="909" alt="Screenshot_2025-12-02_06_31_52" src="https://github.com/user-attachments/assets/9d30e4d5-3a86-49e3-94ed-f30b99a46db4" />
 Screenshot: `ip a` output
 Screenshot: Nmap network sweep
 
@@ -65,6 +65,7 @@ nmap -sn <subnet>/24
 **Goal:** Enumerate open services and detect vulnerable versions.
 
 ### Evidence
+<img width="1920" height="909" alt="Screenshot_2025-10-20_07_07_13" src="https://github.com/user-attachments/assets/6dbc708c-e19f-4af8-9657-913ad75de07e" />
 
 Screenshot: Nmap `-A` scan results
 
@@ -125,6 +126,7 @@ This module automatically triggers the malicious backdoor and spawns a shell on 
 ### Evidence
 
 Screenshots:
+<img width="1920" height="909" alt="Screenshot_2025-12-02_06_37_24" src="https://github.com/user-attachments/assets/455e422f-1a2b-4f05-bcce-06bf162b3aac" />
 
 * Exploit configuration
 * Successful shell creation
