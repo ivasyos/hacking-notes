@@ -9,7 +9,6 @@ TryHackMe Walkthrough • RDP Access • CVE-2019-1388 • Privilege Escalation 
 I am still new to persistence and post-exploitation.
 Some parts of this challenge required me to reference walkthroughs and use AI assistance to fully understand the exploitation steps — especially for privilege escalation and persistence. 😏😏
 This report documents my learning process and progression as I build real hacking skills.
----
 
 ## 🧭 Overview
 
