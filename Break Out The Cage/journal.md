@@ -1,4 +1,4 @@
-```md
+
 # Break Out The Cage – CTF Investigation Log
 
 ## 🧾 Overview
