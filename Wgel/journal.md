@@ -91,7 +91,3 @@ this is the answer
 but i am not satisfyed with the work i do
 
 i cheated i don't like
-
----
-
-If you want next step, I won’t rewrite this — I’ll help you turn this exact thinking into **real skill (so next time you don’t get stuck or feel like you cheated)**.
